@@ -1,0 +1,22 @@
+The Steps and Methods Have been explained in detail in the Notebooks. But to give an overall flow of the process, the steps are as follows: 
+
+1 . Data Cleaning:
+	
+	- Observed Stats and trends in the data 
+	- Removed Unwanted Fields 
+	- Find One Hot Encoded the data that could be made Categorical
+	- Used primitive text mining and Map visualiztion to handle Terms ( Text ) Data and State wise Defaulters Data
+	- Filled the 'mths_since_last_major_derog' column with Avg value and trained models.
+	- Further tried fitting a model on it and train the model further.
+
+2. Methods and Techiniques: 
+	* PERFORMANCE METRIC : Precision , Recall , Accuracy , AUC and F1-Score	
+	- Tried Weighted Logistic Regression and Random Forest on the original Data( Not equal representation ) and verified performance using 5-fold CV.
+	- Did Upsampling of the data by repeated sampling of the minority group trained same models again using 5-fold CV.
+	- Did DownSampling: 
+		- Method 1 : Random Sampling and fitting the model. 
+		- Method 2 : Used K means Clustering to cluster the non-defaulters and used stratified sampling to get  equal representation of each cluster.
+	- Experimented with Ensemble of Weak Tree Learners and got best result from that.
+
+	- NOTE : In all of these models I tried implementing SVM and NN, but the computation took far too long with not significant difference from Logistic or Random Forest.
+
